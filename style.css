@@ -1,101 +1,152 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Times New Roman', Times, serif;
-}
-.body{
-    position: relative;
+header{
+    margin-top: 1%;
     width: 100%;
-    height: 100vh;
-    background:whitesmoke;
+    height: 100vh;    
+background-image: url(https://images.pexels.com/photos/3182759/pexels-photo-3182759.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+background-repeat: no-repeat;
+background-size: cover;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 nav{
-    display: flex;
     width: 100%;
-    height: auto;
-    padding: 0px;
-    align-items: center;
-    justify-content: space-between;
-}
-nav img{
     height: 100px;
-    width: 140px;
-    border-radius:50%;
-    position: relative;
-    top: 3px;
-    left: 30px;
-}
-nav ul li{
-    display: inline-block;
-    list-style: none;
-    margin: 10px 20px;
-}
-nav ul li a{
-    text-decoration:none;
     color: black;
-    font-weight: bold;
-}
-nav ul li a:hover{
-    color:rgb(100, 29, 95);
-}
-details{
-    margin-left: 8%;
-    margin-top: 15%;
-}
-.details{
-    position: relative;
-    top: 30px;
-    left: 40px;
-    font-size: 20px;
-    color: #212121;
-    margin-bottom: 5px;
-}
-.details h3{
-    margin-top: 10px;
-    
-}
-.details p{
-    margin-top: 10px;
-    color:rgb(28, 2, 28);
-}
-.details a{
-    background: #212121;
-    padding: 10px 18px;
-    margin-top: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    color:#fff;
-    display: inline-block;
-    border-radius: 5px;
-}
-.images{
-    width: 44%;
-    height: 80%;
-    position: absolute;
-    bottom: 0;
-    right: 100px;
-}
- .images img{
-    height: 75%;
-    position: absolute;
-    left: 68%;
-    bottom: 30%;
-    transform: translateX(-50%);
-    transition: bottom 1s,left 1s;
- }
- .images:hover .shape{
-    bottom: 20px;
- }
- .images:hover .image{
-    left:73%;
- }
- .bottom{
-    border: 1px solid black;
-    height: 100%;
-    width: 100%;
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: space-evenly;
-    color: wheat;
-    background-color:black;
- }
+}
+.menu a{
+   padding: 10px 20px;
+   color: black;
+   font-size: 20px;
+    text-decoration: none ;
+    position: relative;
+}
+.menu a:before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid indianred;
+    transition: 0.4s linear;
+
+
+}
+.menu a:hover::before{
+    width: 90px;
+    cursor: pointer;
+    counter-reset: blue;
+    text-decoration:none ;
+
+}
+.menu a:hover{
+    color: rgb(230, 104, 59);
+}
+.sign a{
+    padding: 10px 20px;
+    color: brown;
+    font-size: 20px;
+     text-decoration: none ;
+     background: indianred;
+    border-radius: 10px;
+    position: relative;
+    transition: 0.4s;
+}
+.sign a:hover{
+    background: transparent;
+    border: 1px solid indianred;
+}
+.h-text{
+    max-width: 650px;
+    position :absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.h-text span{
+    letter-spacing: 5px;
+}
+.h-text{
+    font-size: 3.5em;
+    text-align: left;
+    text-shadow: 10px;
+}
+.h-text a{
+    text-decoration: none;
+    background:indianred;
+    color:black ;
+    padding: 10px,20px;
+    letter-spacing: 5px;
+    transition: 0.4s;
+}
+.h-text:hover{
+    background: transparent;
+    border: 1px solid indianred;
+}
+.intro h1{
+    font-size: 3rem;
+}
+.card{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.cardbody{
+    flex-basis: 30%;
+    background: white;
+    padding: 1rem;
+border-radius: 8px;
+}
+.cardbody h3{
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+.fab {
+    padding: 10px;
+    left: 50%;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 30px 20px;
+    border-radius: 50%;
+    margin-left: 10px;
+    
+  }
+  
+.fab:hover {
+    color: rgb(230, 104, 59);
+}
+.fab-instagram {
+    background: #dd4b39;
+    color: white;
+  }
+  
+  .fab-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+  
+  .fab-youtube {
+    background: #bb0000;
+    color: white;
+  }
+  
+  .fab-instagram {
+    background: #125688;
+    color: white;
+}
+footer{
+        background: white;
+        color: black;
+        font-size: 90%;
+        padding: 0.2rem;
+        font-family: 'kalam', cursive;
+        text-align: center;
+}
