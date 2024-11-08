@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s; /* Transition for background color change */
+    background-color: #d3e0ea;
+  }
+
+  .calculator {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+  }
+
+  .calculator h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333333;
+  }
+
+  .calculator input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: right;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .calculator .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .calculator button {
+    padding: 15px;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    background-color: #e74c3c;
+    transition: background-color 0.3s;
+  }
+
+  .calculator button:hover {
+    background-color: #c0392b;
+  }
+</style>
+</head>
+<body>
+<div class="calculator">
+<h2>Simple Calculator</h2>
+    <input type="text" id="result" readonly>
+  <div class="buttons">
+    <button onclick="appendToResult('7')">7</button>
+    <button onclick="appendToResult('8')">8</button>
+    <button onclick="appendToResult('9')">9</button>
+    <button onclick="appendToResult('+')">+</button>
+    <button onclick="appendToResult('4')">4</button>
+    <button onclick="appendToResult('5')">5</button>
+    <button onclick="appendToResult('6')">6</button>
+    <button onclick="appendToResult('-')">-</button>
+    <button onclick="appendToResult('1')">1</button>
+    <button onclick="appendToResult('2')">2</button>
+    <button onclick="appendToResult('3')">3</button>
+    <button onclick="appendToResult('*')">*</button>
+    <button onclick="appendToResult('0')">0</button>
+    <button onclick="clearResult()">C</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="appendToResult('/')">/</button>
+  </div>
+</div>
+
+<script>
+  function appendToResult(value) {
+    document.getElementById('result').value += value;
+    changeButtonColor();
+  }
+
+  function clearResult() {
+    document.getElementById('result').value = '';
+  }
+
+  function calculate() {
+    try {
+      const result = eval(document.getElementById('result').value);
+      document.getElementById('result').value = result;
+    } catch (error) {
+      document.getElementById('result').value = 'Error';
+    }
+    changeBackgroundColor();
+  }
+
+  function changeButtonColor() {
+    const buttons = document.querySelectorAll('.calculator button');
+    const colors = ['#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6', '#1abc9c'];
+
+    buttons.forEach((button, index) => {
+      const colorIndex = index % colors.length;
+      button.style.backgroundColor = colors[colorIndex];
+    });
+  }
+
+  function changeBackgroundColor() {
+    const colors = ['#d3e0ea', '#f6c4d2', '#ffc997', '#a2c8d8', '#d4f4dd', '#f9f9f9'];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    document.body.style.backgroundColor = randomColor;
+  }
+</script>
+</body>
+</html>
